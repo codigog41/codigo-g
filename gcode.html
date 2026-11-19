@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CÓDIGO G | Diseños Personalizados</title>
+
+<!-- TIPOGRAFÍA OPEN SANS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<style>
+
+/* CONFIGURACIÓN GENERAL */
+
+:root {
+    --vino: #86181b;
+    --vino-oscuro: #5e1013;
+    --negro: #242124;
+    --gris: #6f6969;
+    --claro: #f7f5f3;
+    --blanco: #ffffff;
+    --linea: #e8e1df;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: var(--negro);
+    background: var(--blanco);
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* PORTADA */
+
+.portada {
+    width: 100%;
+    background: white;
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+}
+
+/* BARRA DE NAVEGACIÓN */
+
+.nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    backdrop-filter: blur(12px);
+}
+
+nav {
+    max-width: 1180px;
+    margin: auto;
+    min-height: 68px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 65px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.nav-link,
+.drop-toggle {
+    border: none;
+    background: transparent;
+    color: var(--negro);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 22px 0;
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.drop-toggle:hover {
+    color: var(--vino);
+}
+
+/* MENÚ DESPLEGABLE */
+
+.dropdown {
+    position: relative;
+}
+
+.drop-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+}
+
+.dropdown.open .chevron {
+    transform: rotate(225deg);
+}
+
+.drop-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 190px;
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    box-shadow: 0 14px 38px rgba(49,19,20,0.09);
+}
+
+.dropdown.open .drop-menu {
+    display: block;
+}
+
+.drop-menu a {
+    display: block;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.drop-menu a:hover {
+    background: var(--claro);
+    color: var(--vino);
+}
+
+/* CONTENEDORES */
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin: auto;
+}
+
+/* PRESENTACIÓN */
+
+.intro {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--vino);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 15px auto 18px;
+    max-width: 850px;
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.intro p {
+    max-width: 720px;
+    margin: auto;
+    color: var(--gris);
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* SECCIONES */
+
+.section {
+    padding: 82px 0;
+}
+
+.soft {
+    background: var(--claro);
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 34px;
+}
+
+h2 {
+    margin: 8px 0 0;
+    font-size: clamp(28px, 3.5vw, 43px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.section-note {
+    max-width: 420px;
+    margin: 0;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+/* CATEGORÍAS DE PRODUCTOS */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category-card {
+    min-height: 210px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background: var(--vino);
+    border-radius: 13px;
+    transition: 0.25s;
+}
+
+.category-card:nth-child(2) {
+    background: #6d171a;
+}
+
+.category-card:nth-child(3) {
+    background: #4d4242;
+}
+
+.category-card:nth-child(4) {
+    background: #302b2b;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background: var(--vino-oscuro);
+}
+
+.category-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+    font-weight: 700;
+}
+
+.category-card h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.category-arrow {
+    align-self: flex-end;
+    font-size: 23px;
+}
+
+/* PORTFOLIO DE TRABAJOS */
+
+.work-section {
+    padding-top: 24px;
+}
+
+.work-category {
+    padding: 46px 0 20px;
+    border-bottom: 1px solid var(--linea);
+}
+
+.work-category:last-child {
+    border-bottom: none;
+}
+
+.work-title {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.work-title h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.work-title span {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* FOTOGRAFÍAS */
+
+.project {
+    width: 100%;
+    min-height: 220px;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    transition: transform 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* INFORMACIÓN DEL ESTUDIO */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* RECTÁNGULO BORDÓ CON TEXTO CÓDIGO G */
+
+.about-mark {
+    width: 100%;
+    min-width: 0;
+    min-height: 300px;
+    padding: 35px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--vino);
+    color: white;
+}
+
+.about-mark span {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+/* TEXTO DE INFORMACIÓN */
+
+.about-copy {
+    min-width: 0;
+}
+
+.about-copy p {
+    color: var(--gris);
+    margin: 18px 0 0;
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.values span {
+    border: 1px solid #d9c6c5;
+    border-radius: 30px;
+    padding: 7px 13px;
+    color: var(--vino);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* CONTACTO */
+
+.contact {
+    background: var(--vino);
+    color: white;
+    padding: 76px 0;
+}
+
+.contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.contact h2 {
+    max-width: 600px;
+}
+
+.contact p {
+    margin-top: 13px;
+    color: rgba(255,255,255,0.78);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 21px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-light {
+    background: white;
+    color: var(--vino);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,0.65);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    padding: 22px;
+    text-align: center;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+/* BOTÓN MENÚ CELULAR */
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--vino);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* ADAPTACIÓN PARA TABLETS */
+
+@media (max-width: 800px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-mark {
+        min-height: 240px;
+        padding: 35px 40px;
+    }
+
+    .about-mark span {
+        font-size: clamp(38px, 8vw, 65px);
+    }
+
+    .contact-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .portada img {
+        min-height: 115px;
+        object-fit: cover;
+    }
+
+    nav {
+        min-height: 60px;
+        padding: 0 20px;
+        justify-content: flex-end;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 8px 22px 18px;
+        background: white;
+        border-bottom: 1px solid var(--linea);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-items.visible {
+        display: flex;
+    }
+
+    .nav-link,
+    .drop-toggle {
+        width: 100%;
+        padding: 13px 0;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .drop-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .intro {
+        padding: 65px 0;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-head {
+        display: block;
+    }
+
+    .section-note {
+        margin-top: 12px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        height: 260px;
+    }
+
+    .category-card {
+        min-height: 170px;
+        padding: 19px;
+    }
+
+    .category-card h3 {
+        font-size: 18px;
+    }
+
+    /* RECTÁNGULO DE CÓDIGO G EN CELULARES */
+
+    .about-mark {
+        min-height: 190px;
+        padding: 28px 24px;
+    }
+
+    .about-mark span {
+        font-size: clamp(32px, 9vw, 48px);
+        letter-spacing: -2px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<header class="portada" id="inicio">
+
+    <img src="portada.jpg"
+         alt="CÓDIGO G - Diseños personalizados">
+
+</header>
+
+
+<!-- BARRA DE NAVEGACIÓN -->
+
+<div class="nav-wrap">
+
+<nav aria-label="Navegación principal">
+
+    <button class="menu-btn" id="menuBtn"
+            aria-label="Abrir menú"
+            aria-expanded="false">☰</button>
+
+    <div class="nav-items" id="navItems">
+
+        <a class="nav-link" href="#contacto">
+            Contacto
+        </a>
+
+        <div class="dropdown" id="productsDropdown">
+
+            <button class="drop-toggle"
+                    id="productsToggle"
+                    aria-expanded="false">
+
+                Productos
+
+                <span class="chevron"></span>
+
+            </button>
+
+            <div class="drop-menu">
+
+                <a href="#corporeos">Corpóreos</a>
+                <a href="#laser">Láser</a>
+                <a href="#router">Router CNC</a>
+                <a href="#papeleria">Papelería</a>
+
+            </div>
+
+        </div>
+
+        <a class="nav-link" href="#informacion">
+            Información
+        </a>
+
+    </div>
+
+</nav>
+
+</div>
+
+
+<main>
+
+<!-- PRESENTACIÓN -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <span class="eyebrow">
+            Diseño · Tecnología · Producción
+        </span>
+
+        <h1>Ideas que toman forma.</h1>
+
+        <p>
+            Diseñamos y creamos piezas personalizadas,
+            combinando creatividad, materiales y tecnología
+            para transformar ideas en objetos únicos.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTOS Y SERVICIOS -->
+
+<section class="section soft" id="productos">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">Nuestro trabajo</span>
+                <h2>Productos y servicios</h2>
+            </div>
+
+            <p class="section-note">
+                Explorá nuestras áreas de trabajo y descubrí
+                las posibilidades de cada técnica.
+            </p>
+
+        </div>
+
+        <div class="category-grid">
+
+            <a class="category-card" href="#corporeos">
+                <span class="category-number">01 / VOLUMEN</span>
+                <h3>Corpóreos</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a class="category-card" href="#laser">
+                <span class="category-number">02 / CORTE Y GRABADO</span>
+                <h3>Láser</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a class="category-card" href="#router">
+                <span class="category-number">03 / MECANIZADO</span>
+                <h3>Router CNC</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+            <a class="category-card" href="#papeleria">
+                <span class="category-number">04 / IMPRESOS</span>
+                <h3>Papelería</h3>
+                <span class="category-arrow">↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALERÍA DE TRABAJOS -->
+
+<section class="section work-section" id="trabajos">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+                <span class="eyebrow">Portfolio</span>
+                <h2>Trabajos realizados</h2>
+            </div>
+
+            <p class="section-note">
+                Una selección de proyectos realizados
+                por nuestro estudio.
+            </p>
+
+        </div>
+
+
+        <!-- CORPÓREOS -->
+
+        <div class="work-category" id="corporeos">
+
+            <div class="work-title">
+                <h3>Corpóreos</h3>
+                <span>Volumen y presencia</span>
+            </div>
+
+            <div class="project-grid">
+                <a class="project" href="album-corporeos.html" aria-label="Ver álbum completo de Corpóreos">
+                    <img src="VANDA.jpg" alt="Trabajo corpóreo destacado">
+                    <span class="album-overlay">Ver álbum completo ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- LÁSER -->
+
+        <div class="work-category" id="laser">
+
+            <div class="work-title">
+                <h3>Láser</h3>
+                <span>Corte y grabado de precisión</span>
+            </div>
+
+            <div class="project-grid">
+                <a class="project" href="album-laser.html" aria-label="Ver álbum completo de Láser">
+                    <img src="laser1.jpg" alt="Trabajo láser destacado">
+                    <span class="album-overlay">Ver álbum completo ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- ROUTER CNC -->
+
+        <div class="work-category" id="router">
+
+            <div class="work-title">
+                <h3>Router CNC</h3>
+                <span>Diseño y mecanizado</span>
+            </div>
+
+            <div class="project-grid">
+                <a class="project" href="album-router.html" aria-label="Ver álbum completo de Router CNC">
+                    <img src="router1.jpg" alt="Trabajo Router CNC destacado">
+                    <span class="album-overlay">Ver álbum completo ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- PAPELERÍA -->
+
+        <div class="work-category" id="papeleria">
+
+            <div class="work-title">
+                <h3>Papelería</h3>
+                <span>Identidad y piezas gráficas</span>
+            </div>
+
+            <div class="project-grid">
+                <a class="project" href="album-papeleria.html" aria-label="Ver álbum completo de Papelería">
+                    <img src="papeleria1.jpg" alt="Trabajo de papelería destacado">
+                    <span class="album-overlay">Ver álbum completo ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFORMACIÓN -->
+
+<section class="section soft" id="informacion">
+
+    <div class="container about-grid">
+
+        <div class="about-mark">
+
+            <span>CÓDIGO G</span>
+
+        </div>
+
+        <div class="about-copy">
+
+            <span class="eyebrow">Quiénes somos</span>
+
+            <h2>Diseño personalizado, hecho realidad.</h2>
+
+            <p>
+                En CÓDIGO G desarrollamos soluciones a medida
+                para transformar ideas en piezas concretas.
+                Trabajamos con distintas técnicas de fabricación
+                y diseño, cuidando los detalles desde la propuesta
+                inicial hasta el resultado final.
+            </p>
+
+            <p>
+                Contanos qué tenés en mente: podemos ayudarte
+                a encontrar la mejor forma de llevarlo a cabo.
+            </p>
+
+            <div class="values">
+
+                <span>Diseño a medida</span>
+                <span>Atención personalizada</span>
+                <span>Producción</span>
+                <span>Creatividad</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+
+    <div class="container contact-inner">
+
+        <div>
+
+            <span class="eyebrow" style="color:#f1c9c9">
+                Hablemos de tu proyecto
+            </span>
+
+            <h2>¿Tenés una idea? Hagámosla realidad.</h2>
+
+            <p>
+                Escribinos para consultar, pedir un presupuesto
+                o desarrollar un diseño personalizado.
+            </p>
+
+        </div>
+
+        <div class="contact-actions">
+
+            <a class="btn btn-light"
+               href="mailto:codigog41@gmail.com">
+                Enviar un email ↗
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://wa.me/5492396427111"
+               target="_blank"
+               rel="noopener">
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    © <span id="year"></span>
+    CÓDIGO G · Diseños personalizados by DAKAT 3D
+
+</footer>
+
+
+<!-- FUNCIONES DEL MENÚ -->
+
+<script>
+
+const dropdown =
+    document.getElementById('productsDropdown');
+
+const toggle =
+    document.getElementById('productsToggle');
+
+const menuBtn =
+    document.getElementById('menuBtn');
+
+const navItems =
+    document.getElementById('navItems');
+
+
+// ABRIR Y CERRAR PRODUCTOS
+
+toggle.addEventListener('click', () => {
+
+    const isOpen =
+        dropdown.classList.toggle('open');
+
+    toggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+    );
+
+});
+
+
+// MENÚ PARA CELULARES
+
+menuBtn.addEventListener('click', () => {
+
+    const isOpen =
+        navItems.classList.toggle('visible');
+
+    menuBtn.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+    );
+
+    menuBtn.textContent =
+        isOpen ? '×' : '☰';
+
+});
+
+
+// CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
+
+document.querySelectorAll('.nav-items a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        dropdown.classList.remove('open');
+
+        toggle.setAttribute('aria-expanded', 'false');
+
+        navItems.classList.remove('visible');
+
+        menuBtn.setAttribute('aria-expanded', 'false');
+
+        menuBtn.textContent = '☰';
+
+    });
+
+});
+
+
+// CERRAR MENÚ AL HACER CLIC AFUERA
+
+document.addEventListener('click', event => {
+
+    if (!dropdown.contains(event.target)) {
+
+        dropdown.classList.remove('open');
+
+        toggle.setAttribute('aria-expanded', 'false');
+
+    }
+
+});
+
+
+// AÑO AUTOMÁTICO
+
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
